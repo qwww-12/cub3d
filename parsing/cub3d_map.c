@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:01:24 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/27 16:20:12 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:01:34 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ bool	is_valid_map(t_config *config, char *pmap)
 	close(fd);
 	fd = open_fd(pmap);
 	populate_map(file, fd, ln);
+	close(fd);
 	delete_newline(file);
 	tmp = file;
 	if (!is_valid_config(config, &file))
@@ -110,5 +111,6 @@ bool	is_valid_map(t_config *config, char *pmap)
 		return (0);
 	if (!void_place(config->map))
 		return (p_error("Map not valid\n"), 0);
+	write_config(pmap);
 	return (1);
 }

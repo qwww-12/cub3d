@@ -14,6 +14,7 @@ SRC = 	cub3d.c								\
 		./parsing/handle_path.c				\
 		./parsing/handle_void.c				\
 		./parsing/cub3d_config.c			\
+		./parsing/print_config.c			\
 		./parsing/floor_color.c				\
 		./parsing/ceiling_color.c			\
 		./parsing/no_texture.c 				\

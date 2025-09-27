@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:12:54 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/27 15:46:30 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/27 16:59:54 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ bool    no_texture(t_config *config, t_file **file);
 bool    so_texture(t_config *config, t_file **file);
 bool    we_texture(t_config *config, t_file **file);
 bool    ea_texture(t_config *config, t_file **file);
+void	write_config(char *pmap);
 
 #endif
