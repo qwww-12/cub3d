@@ -1,0 +1,12 @@
+i will declare a new var and in line by line increment thsi var +1
+like color of F in line is full the var count++ when i found F
+and check this number if found it a big 6 so this error because this config 
+of F is not in first lines he in last maps or in maps 
+
+
+F  = 6..1 is valid
+C  = 5..1 is valid
+NO = 4..1 is valid
+SO = 3..1 is valid
+WE = 2..1 is valid
+EA = just 1 is valid
