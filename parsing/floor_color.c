@@ -15,12 +15,30 @@ static bool set_rgb_floor(t_config *config, char **split)
 	return (1);
 }
 
+static int	len_of_comma(char *str)
+{
+	int		r;
+	int		len;
+
+	r = 0;
+	len = 0;
+	while (str[r])
+	{
+		if (str[r] == ',')
+			len++;
+		r++;
+	}
+	return (len);
+}
+
 static int  check_F(t_config *config, char *line, int r, bool *flag)
 {
 	char    **split;
 
 	if (line[r] == 'F' && is_all_space(line[r + 1]))
 	{
+		if (len_of_comma(line) > 2)
+			return (p_error("Config not valid\n"), 0);
 		if (*flag == 1)
 			return (p_error("Config not valid\n"), 0);
 		r++;

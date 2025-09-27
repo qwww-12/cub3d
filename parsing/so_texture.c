@@ -8,7 +8,7 @@ static int  check_SO(t_config *config, char *line, int r, bool *flag)
 	{
 		if (*flag == 1)
 			return (p_error("Config not valid\n"), 0);
-		r++;
+		r += 2;
 		skip_all_space(&r, line);
 		if (!line[r])
 			return (p_error("Config not valid\n"), 0);

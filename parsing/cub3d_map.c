@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:01:24 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/27 13:36:49 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/27 16:20:12 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,30 +98,14 @@ bool	is_valid_map(t_config *config, char *pmap)
 	populate_map(file, fd, ln);
 	delete_newline(file);
 	tmp = file;
-	r = 0;
-	while (tmp)
-	{
-		printf("r = %d %s\n", r++, tmp->line);
-		tmp = tmp->next;
-	}
-	printf("\n\n\n\n\n\n");
 	if (!is_valid_config(config, &file))
 		return (0);
 	delete_just_sps_head(&file);
 	delete_just_sps_last(file);
 	tmp = file;
-	r = 0;
-	while (tmp)
-	{
-		printf("r = %d %s\n", r++, tmp->line);
-		tmp = tmp->next;
-	}
 	config->map = get_content_map(file, &ln);
 	if (!config->map)
 		return (0);
-	r = -1;
-	while (config->map[++r])
-		printf("r = %d %s\n", r, config->map[r]);
 	if (!check_map_content(config, ln))
 		return (0);
 	if (!void_place(config->map))
