@@ -2,42 +2,42 @@
 
 void    delete_just_sps_head(t_file **file)
 {
-    t_file  *tp1;
+	t_file  *tp1;
 
-    while (*file && (just_space((*file)->line) || !(*file)->line[0]))
-    {
-        tp1 = *file;
-        *file = (*file)->next;
-        free(tp1->line);
-        free(tp1);
-    }
+	while (*file && (just_all_space((*file)->line) || !(*file)->line[0]))
+	{
+		tp1 = *file;
+		*file = (*file)->next;
+		free(tp1->line);
+		free(tp1);
+	}
 }
 
 void    delete_just_sps_last(t_file *file)
 {
-    t_file  *tp1;
-    t_file  *tp2;
+	t_file  *tp1;
+	t_file  *tp2;
 
-    tp1 = file;
-    while (tp1 && !just_space(tp1->line) && tp1->line[0])
-    {
-        tp2 = tp1;
-        tp1 = tp1->next;
-    }
-    while (tp1 && (just_space(tp1->line) || !tp1->line[0]))
-        tp1 = tp1->next;
-    if (!tp1)
-    {
-        tp1 = tp2->next;
-        tp2->next = NULL;
-        while (tp1)
-        {
-            tp2 = tp1->next;
-            free(tp1->line);
-            free(tp1);
-            tp1 = tp2;
-        }
-    }
+	tp1 = file;
+	while (tp1 && !just_all_space(tp1->line) && tp1->line[0])
+	{
+		tp2 = tp1;
+		tp1 = tp1->next;
+	}
+	while (tp1 && (just_all_space(tp1->line) || !tp1->line[0]))
+		tp1 = tp1->next;
+	if (!tp1)
+	{
+		tp1 = tp2->next;
+		tp2->next = NULL;
+		while (tp1)
+		{
+			tp2 = tp1->next;
+			free(tp1->line);
+			free(tp1);
+			tp1 = tp2;
+		}
+	}
 }
 
 bool	just_all_space(char *line)

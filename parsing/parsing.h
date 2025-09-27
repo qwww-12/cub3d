@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:12:54 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/27 15:09:00 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/27 15:46:30 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	free_node(t_file **file, int n);
 int		real_char_len(char *str);
 /*~~~~~~~~~~~~~~~~~~~~<utils03.c>~~~~~~~~~~~~~~~~~~*/
 bool	is_all_space(char c);
+bool	just_all_space(char *line);
 void	skip_all_space(int *r, char *str);
 void    delete_just_sps_head(t_file **file);
 void    delete_just_sps_last(t_file *file);
