@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:12:54 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/29 22:26:49 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:48:52 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,39 +34,29 @@ typedef struct s_var
 	int		n;
 }	t_var;
 
-/*~~~~~~~~~~~~~~~~~~~~<parsing.c>~~~~~~~~~~~~~~~~~~*/
 bool	is_valid_map(t_config *config, char *pmap);
-/*~~~~~~~~~~~~~~~~~~~~<cub3d_map.c>~~~~~~~~~~~~~~~~~~*/
 bool	_map(t_config *config, t_file *file, char *pmap, int *ln);
-/*~~~~~~~~~~~~~~~~~~~~<utils00.c>~~~~~~~~~~~~~~~~~~*/
 int		open_fd(char *file, int fd);
 void	p_error(const char *s);
-/*~~~~~~~~~~~~~~~~~~~~<utils01.c>~~~~~~~~~~~~~~~~~~*/
 void	skip_space(int *r, char *str);
 void	back_space(int *r, char *str);
 bool	is_space(char c);
 bool	is_player(char c);
 bool	is_normal(char c);
-/*~~~~~~~~~~~~~~~~~~~~<utils02.c>~~~~~~~~~~~~~~~~~~*/
 bool	just_space(char *line);
 bool	is_correct_rgb(int n);
 int		number_of_words(char **split);
 void	free_node(t_file **file, int n);
 int		real_char_len(char *str);
-/*~~~~~~~~~~~~~~~~~~~~<utils03.c>~~~~~~~~~~~~~~~~~~*/
 bool	is_all_space(char c);
 bool	just_all_space(char *line);
 void	skip_all_space(int *r, char *str);
 void	delete_just_sps_head(t_file **file);
 void	delete_just_sps_last(t_file *file);
-/*~~~~~~~~~~~~~~~~~~~~<valid_map.c>~~~~~~~~~~~~~~~~~~*/
 bool	first_line_mp(t_config *config, int p_block, int r);
 bool	last_line_mp(t_config *config, int p_block, int r);
 bool	check_map_walls(t_config *config, int *p_block, int ln, int player);
-/*~~~~~~~~~~~~~~~~~~~~<getc_map.c>~~~~~~~~~~~~~~~~~~*/
 char	**get_content_map(t_file *file, int *ln);
-
-t_file	*linked_list(int ln);
 bool	void_place(char **map);
 bool	handle_format(char *path, char *format);
 bool	is_valid_config(t_config *config, t_file **file);
@@ -77,5 +67,6 @@ bool	so_texture(t_config *config, t_file **file);
 bool	we_texture(t_config *config, t_file **file);
 bool	ea_texture(t_config *config, t_file **file);
 void	write_config(char *pmap);
+t_file	*linked_list(int ln);
 
 #endif
