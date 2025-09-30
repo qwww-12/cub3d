@@ -26,6 +26,7 @@ SRC = 	cub3d.c								\
 		./parsing/utils/utils01.c			\
 		./parsing/utils/utils02.c			\
 		./parsing/utils/utils03.c 			\
+		./parsing/utils/utils04.c 			\
 
 HDR = 		cub3d.h 					\
 

@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:38:58 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/30 18:08:19 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:36:56 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static bool	check_map_content(t_config *config, int ln)
 
 bool	_map(t_config *config, t_file *file, char *pmap, int *ln)
 {
+	config->map = NULL;
 	config->map = get_content_map(file, ln);
 	if (!config->map)
 		return (0);

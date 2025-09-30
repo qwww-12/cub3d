@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 16:01:24 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/30 16:44:50 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:42:04 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ bool	is_valid_map(t_config *config, char *pmap)
 	delete_newline(file);
 	tmp = file;
 	if (!is_valid_config(config, &file))
-		return (0);
+		return (free(config->txt), 0);
 	delete_just_sps_head(&file);
 	delete_just_sps_last(file);
 	tmp = file;
 	if (!_map(config, file, pmap, &ln))
-		return (0);
+		return (free_all(config, file), 0);
 	return (1);
 }

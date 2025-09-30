@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 21:53:44 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/29 21:55:28 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:23:18 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static bool	set_rgb_floor(t_config *config, char **split)
 	if (!is_correct_rgb(config->floor_color->red) || 
 		!is_correct_rgb(config->floor_color->green) || 
 		!is_correct_rgb(config->floor_color->blue))
-		return (p_error("Config not valid\n"), 0);
+		return (p_error("Config not valid\n"), free_rgb(config->floor_color), 0);
 	return (1);
 }
 

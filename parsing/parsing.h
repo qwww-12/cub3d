@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 18:12:54 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/30 16:48:52 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:41:42 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ bool	so_texture(t_config *config, t_file **file);
 bool	we_texture(t_config *config, t_file **file);
 bool	ea_texture(t_config *config, t_file **file);
 void	write_config(char *pmap);
+void	p1char(char **ptr);
+void	p2char(char ***ptr);
+void	t_file_free(t_file *file);
+void	free_rgb(t_rgb *rgb);
+void	free_all(t_config *config, t_file *file);
 t_file	*linked_list(int ln);
 
 #endif
