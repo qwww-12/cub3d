@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 21:18:06 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/06/27 18:32:53 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/29 21:41:36 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_rgb
 	int		blue;
 }	t_rgb;
 
-typedef struct	s_textures
+typedef struct s_textures
 {
 	char	*no_texture;
 	char	*so_texture;

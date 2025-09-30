@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 21:17:52 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/06/25 20:09:56 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:33:40 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 {
 	t_config	config;
 
-	if (ac != 2 || !handle_path_map(av[1]))
+	if (ac != 2 || !handle_format(av[1], ".cub"))
 		return (p_error("Argument not valid\n"), 0);
 	if (is_valid_map(&config, av[1]))
 		return (1);

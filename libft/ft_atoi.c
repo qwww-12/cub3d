@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 17:33:02 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/07/17 17:33:07 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:45:42 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,19 @@ static int	ft_checkovf(long long ma, int mg, char c)
 	return (1);
 }
 
-int	ft_atoi(const char *str)
+static int	ft_check(char *str)
+{
+	while (*str)
+	{
+		if ((*str >= 9 && *str <= 13) || *str == 32)
+			str++;
+		else if (*str != ',')
+			return (1337);
+	}
+	return (1);
+}
+
+int	ft_atoi(char *str)
 {
 	size_t	ma;
 	int		mg;
@@ -43,12 +55,7 @@ int	ft_atoi(const char *str)
 		}
 		ma = (ma * 10) + (*str++ - 48);
 	}
-	while (*str)
-	{
-		if ((*str >= 9 && *str <= 13) || *str == 32)
-			str++;
-		else if (*str != ',')
-			return (1337);
-	}
+	if (ft_check(str) == 1337)
+		return (1337);
 	return (ma * mg);
 }

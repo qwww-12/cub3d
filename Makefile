@@ -1,17 +1,18 @@
 CC = cc
 
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = cub3d
 
 LIB = ./libft/libft.a
 
 SRC = 	cub3d.c								\
-		./parsing/cub3d_map.c				\
+		./parsing/parsing.c					\
 		./parsing/set_file.c				\
 		./parsing/valid_map.c				\
+		./parsing/cub3d_map.c				\
 		./parsing/getc_map.c				\
-		./parsing/handle_path.c				\
+		./parsing/handle_format.c			\
 		./parsing/handle_void.c				\
 		./parsing/cub3d_config.c			\
 		./parsing/print_config.c			\

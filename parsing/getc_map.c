@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   getc_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 21:52:26 by mbarhoun          #+#    #+#             */
+/*   Updated: 2025/09/29 21:52:51 by mbarhoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
-static char	**load_map_content(int ln, t_file *file)	
+static char	**load_map_content(int ln, t_file *file)
 {
 	char	**map;
 	int		r;
@@ -23,7 +35,7 @@ static char	**load_map_content(int ln, t_file *file)
 	return (map);
 }
 
-char    **get_content_map(t_file *file, int *ln)
+char	**get_content_map(t_file *file, int *ln)
 {
 	t_file	*tp1;
 

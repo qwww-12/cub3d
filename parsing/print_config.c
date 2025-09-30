@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 16:53:36 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/27 17:02:26 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:47:58 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	write_config(char *pmap)
 	int		r;
 	char	*gnl;
 
-	fd = open_fd(pmap);
+	fd = open_fd(pmap, -1);
 	r = 0;
 	while (r < 6)
 	{

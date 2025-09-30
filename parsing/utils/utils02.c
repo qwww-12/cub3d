@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils02.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 22:19:40 by mbarhoun          #+#    #+#             */
+/*   Updated: 2025/09/29 22:19:41 by mbarhoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../cub3d.h"
 
 int	real_char_len(char *str)
@@ -40,14 +52,14 @@ void	free_node(t_file **file, int n)
 
 int	number_of_words(char **split)
 {
-    int     r;
+	int		r;
 
-    r = 0;
-    while (split[r])
-        r++;
-    if (r != 3)
-        p_error("Config not valid\n");
-    return (r);
+	r = 0;
+	while (split[r])
+		r++;
+	if (r != 3)
+		p_error("Config not valid\n");
+	return (r);
 }
 
 bool	is_correct_rgb(int n)

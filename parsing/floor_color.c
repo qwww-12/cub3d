@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   floor_color.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 21:53:44 by mbarhoun          #+#    #+#             */
+/*   Updated: 2025/09/29 21:55:28 by mbarhoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
-static bool set_rgb_floor(t_config *config, char **split)
+static bool	set_rgb_floor(t_config *config, char **split)
 {
 	config->floor_color = malloc(sizeof(t_rgb));
 	if (!config->floor_color)
@@ -8,8 +20,8 @@ static bool set_rgb_floor(t_config *config, char **split)
 	config->floor_color->red = ft_atoi(split[0]);
 	config->floor_color->green = ft_atoi(split[1]);
 	config->floor_color->blue = ft_atoi(split[2]);
-	if (!is_correct_rgb(config->floor_color->red) ||
-		!is_correct_rgb(config->floor_color->green) ||
+	if (!is_correct_rgb(config->floor_color->red) || 
+		!is_correct_rgb(config->floor_color->green) || 
 		!is_correct_rgb(config->floor_color->blue))
 		return (p_error("Config not valid\n"), 0);
 	return (1);
@@ -31,9 +43,9 @@ static int	len_of_comma(char *str)
 	return (len);
 }
 
-static int  check_F(t_config *config, char *line, int r, bool *flag)
+static int	check_f(t_config *config, char *line, int r, bool *flag)
 {
-	char    **split;
+	char	**split;
 
 	if (line[r] == 'F' && is_all_space(line[r + 1]))
 	{
@@ -54,14 +66,14 @@ static int  check_F(t_config *config, char *line, int r, bool *flag)
 	return (1);
 }
 
-static int	check_result(t_config *config, t_var *var, t_file **file, t_file **tmp)
+static int	check_rsl(t_config *config, t_var *var, t_file **file, t_file **tmp)
 {
 	static int	count;
 	int			res;
 
 	if (real_char_len((*tmp)->line) > 1)
 		count++;
-	res = check_F(config, (*tmp)->line, var->r, &var->flag);
+	res = check_f(config, (*tmp)->line, var->r, &var->flag);
 	if (!res)
 		return (0);
 	else if (res == 2)
@@ -76,7 +88,7 @@ static int	check_result(t_config *config, t_var *var, t_file **file, t_file **tm
 	return (1);
 }
 
-bool    floor_color(t_config *config, t_file **file)
+bool	floor_color(t_config *config, t_file **file)
 {
 	t_var	var;
 	t_file	*tmp;
@@ -93,7 +105,7 @@ bool    floor_color(t_config *config, t_file **file)
 			tmp = tmp->next;
 			continue ;
 		}
-		var.ret = check_result(config, &var, file, &tmp);
+		var.ret = check_rsl(config, &var, file, &tmp);
 		if (var.ret == 0)
 			return (0);
 		else if (var.ret == 2)

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils03.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 22:19:50 by mbarhoun          #+#    #+#             */
+/*   Updated: 2025/09/29 22:21:20 by mbarhoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../cub3d.h"
 
-void    delete_just_sps_head(t_file **file)
+void	delete_just_sps_head(t_file **file)
 {
-	t_file  *tp1;
+	t_file	*tp1;
 
 	while (*file && (just_all_space((*file)->line) || !(*file)->line[0]))
 	{
@@ -13,10 +25,10 @@ void    delete_just_sps_head(t_file **file)
 	}
 }
 
-void    delete_just_sps_last(t_file *file)
+void	delete_just_sps_last(t_file *file)
 {
-	t_file  *tp1;
-	t_file  *tp2;
+	t_file	*tp1;
+	t_file	*tp2;
 
 	tp1 = file;
 	while (tp1 && !just_all_space(tp1->line) && tp1->line[0])
