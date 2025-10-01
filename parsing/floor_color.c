@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 21:53:44 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/30 18:23:18 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/10/01 18:11:18 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ static int	check_f(t_config *config, char *line, int r, bool *flag)
 			return (p_error("Config not valid\n"), 0);
 		split = ft_split(line + r, ',');
 		if (number_of_words(split) != 3 || !set_rgb_floor(config, split))
-			return (0);
+			return (p2char(&split), 0);
+		p2char(&split);
 		*flag = 1;
 		return (2);
 	}
