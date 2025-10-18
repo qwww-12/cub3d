@@ -6,7 +6,7 @@
 /*   By: mbarhoun <mbarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:50:15 by mbarhoun          #+#    #+#             */
-/*   Updated: 2025/09/30 16:45:56 by mbarhoun         ###   ########.fr       */
+/*   Updated: 2025/10/04 17:19:29 by mbarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ char	*ft_strdup(const char *s1);
 int		ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_atoi(char *str);
+
 #endif
